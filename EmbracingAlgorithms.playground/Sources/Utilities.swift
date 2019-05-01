@@ -1,5 +1,17 @@
 import Foundation
 
+public func getSwiftVersion() -> String {
+    #if swift(>=5.0)
+    return "5.x"
+    #elseif swift(>=4.0)
+    return "4.x"
+    #elseif swift(>=3.0)
+    return "3.x"
+    #else
+    return "lower than 3.0"
+    #endif
+}
+
 public struct Shape {
     enum Form: String {
         case star = "*️⃣"
@@ -50,4 +62,28 @@ public func getSampleCanvas(selected:[Int]) -> Canvas {
     }
     
     return canvas
+}
+
+extension MutableCollection {
+    /// Moves all elements satisfying `isSuffixElement` into a suffix of the collection,
+    /// returning the start position of the resulting suffix.
+    ///
+    /// - Complexity: O(n) where n is the number of elements.
+    public mutating func halfStablePartitionStepByStep(isSuffixElement: (Element) -> Bool) -> Index {
+        guard var i = firstIndex(where: isSuffixElement) else { return endIndex }
+        var step = 0
+        var j = index(after: i)
+        while j != endIndex {
+            if !isSuffixElement(self[j]) {
+                swapAt(i, j)
+                print("step=\(step), j=\(j), swapped for \(i): \(self)")
+                formIndex(after: &i)
+            } else {
+                print("step=\(step), j=\(j), no swap: \(self)")
+            }
+            formIndex(after: &j)
+            step += 1
+        }
+        return i
+    }
 }

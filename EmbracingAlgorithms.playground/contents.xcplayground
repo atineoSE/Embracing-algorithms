@@ -3,6 +3,6 @@
     <pages>
         <page name='Introduction'/>
         <page name='Delete Selection'/>
-        <page name='More Algorithms'/>
+        <page name='Inspecting implementation in stdlib'/>
     </pages>
 </playground>
