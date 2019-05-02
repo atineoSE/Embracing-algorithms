@@ -21,7 +21,7 @@ print(c1.shapes)
 // print(c1.shapes)
 
 /*:
- This is buggy though, and if you run this statement you will get a "fatal error,: index out of range".
+ This is buggy though, and if you run this statement you will get a `fatal error,: index out of range`.
  The reason is that we remove elements as we traverse the array, not updating the iteration bounds.
  
  Let's fix the algorithm:
@@ -102,7 +102,7 @@ print("\n")
 
 
 /*:
- The problem with this algorithm is that it has quadratic complexity, O(N^2), since remove(at:) has O(N) and it's within a loop 0..<N.
+ The problem with this algorithm is that it has quadratic complexity, `O(N^2)`, since `remove(at:)` has `O(N)` and it's within a loop `0..<N`.
  
  We can do better by using a method already available in the Swift Standard Library like so:
  */
@@ -121,7 +121,7 @@ print(c1.shapes)
 print("\n")
 
 /*:
- Not only is this algorithm more efficient at O(N) but it's way more readable, it is immediately obvious what it does.
+ Not only is this algorithm more efficient at `O(N)` but it's way more readable, it is immediately obvious what it does.
  
   [< Previous](@previous)           [Home](Introduction)           [Next >](@next)
  */

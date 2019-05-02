@@ -2,7 +2,7 @@
 /*:
 Since Swift is open source, it means that we can actually inspect how the code in the standard library is done.
  
- So let us have a look into the implementation of removeAll(where:)
+ So let us have a look into the implementation of `removeAll(where:)`
  
  */
 import Foundation
@@ -23,9 +23,9 @@ extension MutableCollection where Self : RangeReplaceableCollection {
  (Note: find the original implementation [here](https://github.com/apple/swift/blob/master/stdlib/public/core/RangeReplaceableCollection.swift#L362))
 
  
-Note the shorthand notation for the range suffixStart..<endIndex as suffixStart...
+Note the shorthand notation for the range `suffixStart..<endIndex` as `suffixStart...`
  
-halfStablePartition is an implementation detail, which we can further inspect.
+`halfStablePartition` is an implementation detail, which we can further inspect.
  
 */
 
@@ -49,7 +49,7 @@ extension MutableCollection {
 }
 
 /*:
- Let's see how the halfStablePartition(isSuffixElement:) creates the partition step by step.
+ Let's see how the `halfStablePartition(isSuffixElement:)` creates the partition step by step.
  */
 
 var c = getSampleCanvas(selected: [2, 3, 6, 7])

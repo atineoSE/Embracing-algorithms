@@ -5,6 +5,7 @@
         <page name='Delete Selection'/>
         <page name='Inspecting implementation in stdlib'/>
         <page name='Algorithms of quadratic complexity'/>
-        <page name='Rewriting algorithms leveraging stdlib'/>
+        <page name='Rewriting algorithms leveraging open source Swift'/>
+        <page name='Untitled Page'/>
     </pages>
 </playground>
