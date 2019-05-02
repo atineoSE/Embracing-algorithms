@@ -55,10 +55,9 @@ public func getSampleCanvas(selected:[Int]) -> Canvas {
                                  Shape(form: .square, isSelected: false),
                                  Shape(form: .circle, isSelected: false),
                                  Shape(form: .revolvingArrows, isSelected: false)])
-    for (idx, _) in canvas.shapes.enumerated() {
-        if selected.contains(idx) {
-            canvas.shapes[idx].isSelected = true
-        }
+    
+    for i in selected {
+        canvas.shapes[i].isSelected = true
     }
     
     return canvas

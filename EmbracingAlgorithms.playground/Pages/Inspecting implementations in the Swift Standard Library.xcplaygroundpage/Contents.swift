@@ -1,5 +1,7 @@
 
 /*:
+ ## Inspecting implementations in the Swift Standard Library
+ 
 Since Swift is open source, it means that we can actually inspect how the code in the standard library is done.
  
  So let us have a look into the implementation of `removeAll(where:)`
@@ -25,7 +27,7 @@ extension MutableCollection where Self : RangeReplaceableCollection {
  
 Note the shorthand notation for the range `suffixStart..<endIndex` as `suffixStart...`
  
-`halfStablePartition` is an implementation detail, which we can further inspect.
+From the point of view of the use of this function, we don't care about it's internals, but let's have a look at `halfStablePartition`, since now we can.
  
 */
 
@@ -55,7 +57,7 @@ extension MutableCollection {
 var c = getSampleCanvas(selected: [2, 3, 6, 7])
 print("Initial array of shapes: \(c.shapes)")
 let index = c.shapes.halfStablePartitionStepByStep(isSuffixElement: {$0.isSelected})
-print("Start position of the suffix partition=\(index)")
+print("Start position of the suffix partition = \(index)")
 print("\n")
 
 /*:
@@ -63,7 +65,7 @@ print("\n")
  */
 
 c.shapes.removeSubrange(index...)
-print("Resulting shapes = \(c.shapes)")
+print("Resulting shapes after removing the suffix partition = \(c.shapes)")
  
 /*:
 [< Previous](@previous)           [Home](Introduction)           [Next >](@next)

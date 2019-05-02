@@ -2,10 +2,12 @@
 <playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
         <page name='Introduction'/>
-        <page name='Delete Selection'/>
-        <page name='Inspecting implementation in stdlib'/>
+        <page name='Leveraging the Swift Standard Library to achieve readability and performance'/>
+        <page name='Inspecting implementations in the Swift Standard Library'/>
         <page name='Algorithms of quadratic complexity'/>
-        <page name='Rewriting algorithms leveraging open source Swift'/>
-        <page name='Untitled Page'/>
+        <page name='Rewriting algorithms by drawing from open source Swift'/>
+        <page name='Making algorithms more generic'/>
+        <page name='Extending the approach to the remaining algorithms'/>
+        <page name='Conclusions'/>
     </pages>
 </playground>

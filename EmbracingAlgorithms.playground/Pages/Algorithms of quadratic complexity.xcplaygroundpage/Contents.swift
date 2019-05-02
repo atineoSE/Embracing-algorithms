@@ -1,5 +1,7 @@
 
 /*:
+ ## Algorithms of quadratic complexity
+ 
  There a bunch of other algorithms operating on shapes, namely:
  */
 
@@ -126,5 +128,10 @@ print(c.shapes)
 print("\n")
 
 /*:
+ 
+ All these algorithms have the same approach as the original one in `deleteSelection()`, which means they are all `O(n^2)`.
+ 
+ Let's see next how we can improve this.
+ 
  [< Previous](@previous)           [Home](Introduction)           [Next >](@next)
  */

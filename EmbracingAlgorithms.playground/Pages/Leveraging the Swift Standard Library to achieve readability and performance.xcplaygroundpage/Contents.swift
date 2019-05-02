@@ -1,7 +1,9 @@
 /*:
- Consider we have a canvas with some shapes. Some shapes may be selected and we would like to perform some operations on the selected shapes, for instance, remove them.
+ ## Leveraging the Swift Standard Library to achieve readability and performance
+ 
+ Consider we have a canvas with some shapes. Some shapes may be selected and we would like to perform some operations on the selected shapes, for instance, delete them.
 
- This seems like a good way to remove an element from this array of shapes.
+The following seems like a good way to remove an element from this array of shapes.
  */
 
 extension Canvas {
@@ -21,7 +23,7 @@ print(c1.shapes)
 // print(c1.shapes)
 
 /*:
- This is buggy though, and if you run this statement you will get a `fatal error,: index out of range`.
+ This is buggy though, and if you run the above statement you will get a `fatal error,: index out of range`.
  The reason is that we remove elements as we traverse the array, not updating the iteration bounds.
  
  Let's fix the algorithm:
@@ -44,7 +46,9 @@ print(c1.shapes)
 print("\n")
 
 /*:
- So that worked, but it's still buggy. It does not work in all cases. Consider the case of having 2 selected shapes back-to-back:
+ So this is already less readable than the previous version, but it worked.
+ 
+ But dit it? It is actually still buggy. It does not work in all cases. Consider the case of having 2 selected shapes back-to-back:
  */
 print("Remove selected (two selected elements, buggy)")
 c1 = getSampleCanvas(selected: [7, 8])
@@ -54,7 +58,7 @@ print(c1.shapes)
 print("\n")
 
 /*:
- The second selected element was not removed because we incremented the index as we removed one element, thus skipping it.
+ The second selected element was not removed because we incremented the index as we removed the one before, thus skipping it.
  
  We can surely fix it:
  */
@@ -80,7 +84,9 @@ print(c1.shapes)
 print("\n")
 
 /*:
- But it starts to get messy, and it's easy to make mistakes. Surely we can write this to be simpler by reversing the traversal, so that we don't have to account for index correcting as we remove elements. By removing from the end the part of the array, the part that is not yet traversed is not affected and we don't need to do index arithmetic.
+ That worked, but it starts to get messy, making it easier to make mistakes.
+ 
+ Surely we can write this to be simpler by reversing the traversal, so that we don't have to account for index correcting as we remove elements. By removing from the end the part of the array, the part that is not yet traversed is not affected and we don't need to do index arithmetic.
  */
 
 extension Canvas {
@@ -102,7 +108,7 @@ print("\n")
 
 
 /*:
- The problem with this algorithm is that it has quadratic complexity, `O(N^2)`, since `remove(at:)` has `O(N)` and it's within a loop `0..<N`.
+ The problem with this algorithm though is that it has quadratic complexity, `O(N^2)`, since `remove(at:)` has `O(N)` and it's within a loop `0..<N`.
  
  We can do better by using a method already available in the Swift Standard Library like so:
  */
@@ -113,7 +119,7 @@ extension Canvas {
     }
 }
 
-print("Remove selected with removeAll from Foundation (two selected elements, works)")
+print("Remove selected with removeAll from the Swift Standard Library (two selected elements, works)")
 c1 = getSampleCanvas(selected: [7, 8])
 print(c1.shapes)
 c1.deleteSelection5()
@@ -121,7 +127,7 @@ print(c1.shapes)
 print("\n")
 
 /*:
- Not only is this algorithm more efficient at `O(N)` but it's way more readable, it is immediately obvious what it does.
+ Not only is this algorithm more efficient, at `O(N)`, but it's way more readable, since it is immediately obvious what it does. That means that it is easier to maintain.
  
   [< Previous](@previous)           [Home](Introduction)           [Next >](@next)
  */
