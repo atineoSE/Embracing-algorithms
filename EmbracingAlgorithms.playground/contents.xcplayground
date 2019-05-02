@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='rendered'>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
         <page name='Introduction'/>
         <page name='Delete Selection'/>
         <page name='Inspecting implementation in stdlib'/>
+        <page name='Algorithms of quadratic complexity'/>
+        <page name='Rewriting algorithms leveraging stdlib'/>
     </pages>
 </playground>
