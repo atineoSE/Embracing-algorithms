@@ -93,7 +93,7 @@ print("\n")
 /*:
  Not only is this algorithm more generic and thus reusable, but it reads more naturally, since it hides away implementation details about how the collection is indexed.
  
- In that case, it is strongly advisable that we add some documentation (as above) for users of this function, since it can now be applied to a broad range of problems.
+ In that case, it is strongly advisable that we add some documentation (as above) for users of this function, since it can now be applied to a broader range of problems.
  
  Let's extend now the same approach to the one particularly problematic function: `gatherSelected(at:)`.
  
@@ -148,7 +148,7 @@ print("\n")
 
 extension MutableCollection {
     /// Gathers elements satisfying `predicate` at `target`, preserving their relative order. ///
-    /// - Complexity: O(n log n) where n is the number of elements.
+    /// - Complexity: O(n) where n is the number of elements.
     mutating func gather(at target: Index, allSatisfying predicate: (Element)->Bool) {
         self[..<target].stablePartition(isSuffixElement: predicate)
         self[target...].stablePartition(isSuffixElement: { !predicate($0) })

@@ -14,7 +14,7 @@ extension MutableCollection where Self : RangeReplaceableCollection {
     ///   ...
     /// - Complexity: O(n) where n is the number of elements.
     mutating func removeAll(where shouldRemove: (Element)->Bool) {
-         let suffixStart = halfStablePartition(isSuffixElement: shouldRemove)
+        let suffixStart = halfStablePartition(isSuffixElement: shouldRemove)
         removeSubrange(suffixStart...)
     }
 }

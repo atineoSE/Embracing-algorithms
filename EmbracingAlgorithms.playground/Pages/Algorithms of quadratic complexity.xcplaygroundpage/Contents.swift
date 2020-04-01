@@ -2,7 +2,7 @@
 /*:
  ## Algorithms of quadratic complexity
  
- There a bunch of other algorithms operating on shapes, namely:
+In the sample app there is a bunch of other algorithms operating on shapes, namely:
  */
 
 
